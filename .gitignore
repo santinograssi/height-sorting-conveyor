@@ -1,0 +1,7 @@
+# Python environment and generated cache
+.venv/
+__pycache__/
+*.py[cod]
+
+# OpenPLC generated files
+openPLC/build/

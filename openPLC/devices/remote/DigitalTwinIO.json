@@ -1,0 +1,102 @@
+{
+  "name": "DigitalTwinIO",
+  "protocol": "modbus-tcp",
+  "modbusTcpConfig": {
+    "host": "127.0.0.1",
+    "port": 1502,
+    "timeout": 1000,
+    "slaveId": 1,
+    "ioGroups": [
+      {
+        "id": "7417dca6-1dd7-4993-afe4-4583f850104d",
+        "name": "conveyorRun",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "10",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "conveyorRun_0",
+            "name": "conveyorRun_0",
+            "type": "Digital Output (Single Coil)",
+            "iecLocation": "%QX0.0",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "eb0cafb7-9d11-4a6b-b503-ce899366e2a3",
+        "name": "diverterGate",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "11",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "diverterGate_0",
+            "name": "diverterGate_0",
+            "type": "Digital Output (Single Coil)",
+            "iecLocation": "%QX0.1",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "fb91ac3f-6d77-4644-9764-57e5ee711cb9",
+        "name": "alarmActive",
+        "functionCode": "5",
+        "cycleTime": 100,
+        "offset": "12",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "alarmActive_0",
+            "name": "alarmActive_0",
+            "type": "Digital Output (Single Coil)",
+            "iecLocation": "%QX0.2",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "0ad501ca-f0c0-4c52-9eaf-f4d50cb6a9db",
+        "name": "heightReading",
+        "functionCode": "4",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "heightReading_0",
+            "name": "heightReading_0",
+            "type": "Analog Input (Input Register)",
+            "iecLocation": "%IW0",
+            "alias": ""
+          }
+        ]
+      },
+      {
+        "id": "6119d7bd-0906-49d3-9c17-8d255a83b256",
+        "name": "objectDetected",
+        "functionCode": "1",
+        "cycleTime": 100,
+        "offset": "0",
+        "length": 1,
+        "errorHandling": "keep-last-value",
+        "ioPoints": [
+          {
+            "id": "objectDetected_0",
+            "name": "objectDetected_0",
+            "type": "Digital Input (Coil Status)",
+            "iecLocation": "%IX0.0",
+            "alias": ""
+          }
+        ]
+      }
+    ]
+  }
+}

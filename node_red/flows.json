@@ -1,0 +1,960 @@
+[
+    {
+        "id": "8968eeb8b116fa7f",
+        "type": "tab",
+        "label": "Height Sorting Conveyor",
+        "disabled": false,
+        "info": "Dashboard for the HeightSortingConveyor project\n\nModbus address map (OpenPLC as Modbus slave, port 502):\n- heightReading   -> InputRegister 0 (FC4)\n- conveyorRun     -> Coil 0  (Read Coils / FC1)\n- diverterGate    -> Coil 1  (Read Coils / FC1)\n- alarmActive     -> Coil 2  (Read Coils / FC1)\n- startCmd        -> Coil 3  (Write Single Coil / FC5)\n- stopCmd         -> Coil 4  (Write Single Coil / FC5)\n- resetCmd        -> Coil 5  (Write Single Coil / FC5)\n- systemRunning   -> Coil 6  (Read Coils / FC1)\n"
+    },
+    {
+        "id": "4a64feae98d0c5fb",
+        "type": "group",
+        "z": "8968eeb8b116fa7f",
+        "name": "Outputs",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3f5acae91f28726e",
+            "08fd655bd1b79648",
+            "acb4ab2ba041a1e3",
+            "abc23a676639322d",
+            "863d86be68e469f2",
+            "cb58d5748a987327",
+            "6c54f602fdee0620",
+            "00759c30794f6bd2",
+            "3653060e936820cd"
+        ],
+        "x": 234,
+        "y": 519,
+        "w": 692,
+        "h": 202
+    },
+    {
+        "id": "c2169d089ac639e1",
+        "type": "group",
+        "z": "8968eeb8b116fa7f",
+        "name": "Inputs",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4e6eec2edf7b0da2",
+            "c574e1cf99a64338",
+            "1e73f16bbe9c45b0",
+            "a8adedf1d788aa53",
+            "193cc89c861965f4",
+            "c888f4d10b6f8563",
+            "2e61e2d46f600a9a",
+            "5ac43920b82cc557",
+            "ce136b0170f8d70b",
+            "0cb886ff9d0f82c4",
+            "014ecb82ea318e0f",
+            "435d025df419f960",
+            "1449dd8348e4a999",
+            "01ee91a489650f90",
+            "412edf8fbd51037f",
+            "69e365d91d50f257",
+            "e4841d977b55aabd",
+            "af3f8865da914247",
+            "cc6adb650ce62397"
+        ],
+        "x": 234,
+        "y": 139,
+        "w": 1212,
+        "h": 342
+    },
+    {
+        "id": "4e6eec2edf7b0da2",
+        "type": "modbus-read",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "systemRunning",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "6",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "84ef9599aef5a7fc",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "5ac43920b82cc557"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c574e1cf99a64338",
+        "type": "modbus-read",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "conveyorRun",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "84ef9599aef5a7fc",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "ce136b0170f8d70b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1e73f16bbe9c45b0",
+        "type": "modbus-read",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "diverterGate",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "84ef9599aef5a7fc",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "0cb886ff9d0f82c4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a8adedf1d788aa53",
+        "type": "modbus-read",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "alarmActive",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "2",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "84ef9599aef5a7fc",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "2e61e2d46f600a9a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "193cc89c861965f4",
+        "type": "modbus-read",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "heightReading",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "84ef9599aef5a7fc",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 360,
+        "y": 420,
+        "wires": [
+            [
+                "c888f4d10b6f8563"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c888f4d10b6f8563",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "extract register value",
+        "func": "// modbus-read for registers returns msg.payload as an array,\n// e.g. [220]. The gauge widget wants a plain number.\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload[0];\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 420,
+        "wires": [
+            [
+                "412edf8fbd51037f",
+                "af3f8865da914247"
+            ]
+        ]
+    },
+    {
+        "id": "2e61e2d46f600a9a",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "extract coil value",
+        "func": "// modbus-read for coils returns msg.payload as an array of booleans,\n// e.g. [true]. Extract the single value for the LED / banner widgets.\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload[0];\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 360,
+        "wires": [
+            [
+                "01ee91a489650f90",
+                "69e365d91d50f257"
+            ]
+        ]
+    },
+    {
+        "id": "5ac43920b82cc557",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "extract coil value",
+        "func": "if (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload[0];\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 180,
+        "wires": [
+            [
+                "014ecb82ea318e0f"
+            ]
+        ]
+    },
+    {
+        "id": "ce136b0170f8d70b",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "extract coil value",
+        "func": "if (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload[0];\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "435d025df419f960"
+            ]
+        ]
+    },
+    {
+        "id": "0cb886ff9d0f82c4",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "extract coil value",
+        "func": "if (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload[0];\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "1449dd8348e4a999"
+            ]
+        ]
+    },
+    {
+        "id": "014ecb82ea318e0f",
+        "type": "ui-led",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "System Running",
+        "group": "grp_sensors",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "System Running",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#0000ff"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": false,
+        "showGlow": true,
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "435d025df419f960",
+        "type": "ui-led",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "Conveyor Run",
+        "group": "grp_actuators",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Conveyor Run",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": false,
+        "showGlow": true,
+        "x": 790,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1449dd8348e4a999",
+        "type": "ui-led",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "Diverter Gate",
+        "group": "grp_actuators",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Diverter Gate",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#ffff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": false,
+        "showGlow": true,
+        "x": 780,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "01ee91a489650f90",
+        "type": "ui-led",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "Alarm Active",
+        "group": "grp_actuators",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Alarm Active",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#ff0000"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": false,
+        "showGlow": true,
+        "x": 780,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "412edf8fbd51037f",
+        "type": "ui-gauge",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "Height Reading",
+        "group": "grp_sensors",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "2",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Height Reading",
+        "alwaysShowTitle": false,
+        "units": "mm",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#0000ff",
+                "text": "Tall",
+                "textType": "str"
+            },
+            {
+                "from": "160",
+                "color": "#00e1ff",
+                "text": "Short",
+                "textType": "str"
+            },
+            {
+                "from": "260",
+                "color": "#2e2c30",
+                "text": "Empty",
+                "textType": "str"
+            }
+        ],
+        "min": "0",
+        "max": "350",
+        "sizeThickness": "0",
+        "sizeGap": "0",
+        "sizeKeyThickness": "20",
+        "className": "",
+        "x": 760,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69e365d91d50f257",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "show banner only if alarm active",
+        "func": "// The Reset Alarm banner/button group is only meaningful while\n// alarmActive is True. We drive the group's visibility from here\n// so the operator isn't tempted to click Reset when there's nothing\n// to reset -- mirrors the ladder's own alarm-priority pattern: the\n// alarm state is the single source of truth for what's relevant.\nvar alarmIsActive = msg.payload === true;\n\nmsg.payload = {\n    group: {\n        show: alarmIsActive ? [\"grp_alarm_banner\"] : [],\n        hide: alarmIsActive ? [] : [\"grp_alarm_banner\"]\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 380,
+        "wires": [
+            [
+                "e4841d977b55aabd"
+            ]
+        ]
+    },
+    {
+        "id": "e4841d977b55aabd",
+        "type": "ui-control",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "toggle alarm banner group",
+        "ui": "3577297c1fc80a74",
+        "events": "all",
+        "x": 1300,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f5acae91f28726e",
+        "type": "ui-button",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "group": "grp_controls",
+        "name": "Start Button",
+        "label": "START",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#2e7d32",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "start",
+        "topicType": "str",
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "abc23a676639322d"
+            ]
+        ]
+    },
+    {
+        "id": "08fd655bd1b79648",
+        "type": "ui-button",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "group": "grp_controls",
+        "name": "Stop Button",
+        "label": "STOP",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#c62828",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "stop",
+        "topicType": "str",
+        "x": 330,
+        "y": 620,
+        "wires": [
+            [
+                "863d86be68e469f2"
+            ]
+        ]
+    },
+    {
+        "id": "acb4ab2ba041a1e3",
+        "type": "ui-button",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "group": "grp_alarm_banner",
+        "name": "Reset Alarm Button",
+        "label": "RESET ALARM",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#f57f17",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "reset",
+        "topicType": "str",
+        "enableClick": true,
+        "x": 350,
+        "y": 680,
+        "wires": [
+            [
+                "cb58d5748a987327"
+            ]
+        ]
+    },
+    {
+        "id": "abc23a676639322d",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "name": "pulse True then False",
+        "func": "// startCmd/stopCmd/resetCmd are read by the ladder as momentary\n// commands, not latched switches. We send True immediately, then\n// schedule a False write ~300ms later so the coil doesn't stay\n// stuck On -- this keeps Node-RED's button behaving like a real\n// momentary pushbutton on a control panel, regardless of whether\n// the ladder itself does edge detection.\nfunction buildWriteMsg(value) {\n    return {\n        payload: {\n            value: value,\n            fc: 5,\n            unitid: 1,\n            address: 3,\n            quantity: 1\n        }\n    };\n}\n\nvar onMsg = buildWriteMsg(true);\nvar offMsg = buildWriteMsg(false);\n\nsetTimeout(function () {\n    node.send(offMsg);\n}, 300);\n\nreturn onMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 560,
+        "wires": [
+            [
+                "6c54f602fdee0620"
+            ]
+        ]
+    },
+    {
+        "id": "863d86be68e469f2",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "name": "pulse True then False",
+        "func": "function buildWriteMsg(value) {\n    return {\n        payload: {\n            value: value,\n            fc: 5,\n            unitid: 1,\n            address: 4,\n            quantity: 1\n        }\n    };\n}\n\nvar onMsg = buildWriteMsg(true);\nvar offMsg = buildWriteMsg(false);\n\nsetTimeout(function () {\n    node.send(offMsg);\n}, 300);\n\nreturn onMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 620,
+        "wires": [
+            [
+                "00759c30794f6bd2"
+            ]
+        ]
+    },
+    {
+        "id": "cb58d5748a987327",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "name": "pulse True then False",
+        "func": "function buildWriteMsg(value) {\n    return {\n        payload: {\n            value: value,\n            fc: 5,\n            unitid: 1,\n            address: 5,\n            quantity: 1\n        }\n    };\n}\n\nvar onMsg = buildWriteMsg(true);\nvar offMsg = buildWriteMsg(false);\n\nsetTimeout(function () {\n    node.send(offMsg);\n}, 300);\n\nreturn onMsg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 680,
+        "wires": [
+            [
+                "3653060e936820cd"
+            ]
+        ]
+    },
+    {
+        "id": "6c54f602fdee0620",
+        "type": "modbus-flex-write",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "name": "write startCmd (coil 3)",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "84ef9599aef5a7fc",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 800,
+        "y": 560,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "00759c30794f6bd2",
+        "type": "modbus-flex-write",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "name": "write stopCmd (coil 4)",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "84ef9599aef5a7fc",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 800,
+        "y": 620,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3653060e936820cd",
+        "type": "modbus-flex-write",
+        "z": "8968eeb8b116fa7f",
+        "g": "4a64feae98d0c5fb",
+        "name": "write resetCmd (coil 5)",
+        "showStatusActivities": false,
+        "showErrors": true,
+        "showWarnings": true,
+        "server": "84ef9599aef5a7fc",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 800,
+        "y": 680,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "af3f8865da914247",
+        "type": "function",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "name": "classify height",
+        "func": "if (msg.payload > 260) {\n    msg.payload = 'Empty'\n} else if (msg.payload < 160) {\n    msg.payload = 'Tall'\n} else {\n    msg.payload = 'Short'\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 440,
+        "wires": [
+            [
+                "cc6adb650ce62397"
+            ]
+        ]
+    },
+    {
+        "id": "cc6adb650ce62397",
+        "type": "ui-text",
+        "z": "8968eeb8b116fa7f",
+        "g": "c2169d089ac639e1",
+        "group": "grp_sensors",
+        "order": 0,
+        "width": "3",
+        "height": "2",
+        "name": "",
+        "label": "Classification",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1130,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "84ef9599aef5a7fc",
+        "type": "modbus-client",
+        "name": "heightSortingConveyor-Modbus",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "grp_sensors",
+        "type": "ui-group",
+        "name": "Sensors",
+        "page": "dash_page1",
+        "width": "6",
+        "height": "2",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "grp_actuators",
+        "type": "ui-group",
+        "name": "Actuators & Alarm",
+        "page": "dash_page1",
+        "width": "6",
+        "height": "2",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "3577297c1fc80a74",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "grp_controls",
+        "type": "ui-group",
+        "name": "Controls",
+        "page": "dash_page1",
+        "width": "6",
+        "height": "2",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "grp_alarm_banner",
+        "type": "ui-group",
+        "name": "Alarm Reset",
+        "page": "dash_page1",
+        "width": "6",
+        "height": "1",
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "dash_page1",
+        "type": "ui-page",
+        "name": "Conveyor HMI",
+        "ui": "3577297c1fc80a74",
+        "path": "/conveyor-hmi",
+        "icon": "gauge",
+        "layout": "notebook",
+        "theme": "5daf4228dd51e62e",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "9"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "5daf4228dd51e62e",
+        "type": "ui-theme",
+        "name": "Bordo Night",
+        "colors": {
+            "surface": "#000000",
+            "primary": "#850000",
+            "bgPage": "#262626",
+            "groupBg": "#000000",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "a63f8493d8fe7927",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-modbus": "5.60.1",
+            "@flowfuse/node-red-dashboard-2-ui-led": "1.1.0",
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
